@@ -14,7 +14,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
             <div className="inline-block px-4 py-2 bg-accent/10 rounded-full">
               <span className="text-sm font-semibold text-accent">Частное охранное предприятие</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">
+            <h1 className="text-5xl md:text-6xl text-primary leading-tight my-3 mx-0 font-semibold">
               Профессиональная охрана вашего бизнеса
             </h1>
             <p className="text-lg text-gray-600">
