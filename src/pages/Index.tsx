@@ -94,7 +94,7 @@ const Index = () => {
               <div className="w-10 h-10 bg-primary rounded flex items-center justify-center">
                 <Icon name="Shield" size={24} className="text-white" />
               </div>
-              <span className="text-xl font-bold text-primary">СТРАЖ</span>
+              <span className="text-xl font-bold text-primary">Кристал</span>
             </div>
             <div className="hidden md:flex items-center gap-6">
               <button onClick={() => scrollToSection('services')} className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
