@@ -30,8 +30,8 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-square rounded-lg bg-gradient-to-br from-primary to-accent/20 flex items-center justify-center">
-              <Icon name="ShieldCheck" size={200} className="text-white opacity-20" />
+            <div className="aspect-square rounded-lg flex items-center justify-center p-8">
+              <img src="https://cdn.poehali.dev/files/d53d6283-21ca-427e-830b-79c7cb8bf18e.jpg" alt="КРИСТАЛЛ" className="w-full h-full object-contain" />
             </div>
           </div>
         </div>
