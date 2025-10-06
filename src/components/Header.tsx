@@ -60,7 +60,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
       </div>
       
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
+        <div className="md:hidden border-t border-gray-200 bg-white animate-in slide-in-from-top duration-300">
           <div className="container mx-auto px-4 py-4 space-y-3">
             <button onClick={() => handleNavigate('services')} className="block w-full text-left py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors">
               Услуги
