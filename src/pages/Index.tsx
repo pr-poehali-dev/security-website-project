@@ -197,7 +197,7 @@ const Index = () => {
               <h2 className="text-4xl font-bold text-primary mb-6">О компании</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Частное охранное предприятие «СТРАЖ» — надежный партнер в сфере безопасности с многолетним опытом работы на рынке охранных услуг.
+                  Частное охранное предприятие «КРИСТАЛЛ» — надежный партнер в сфере безопасности с многолетним опытом работы на рынке охранных услуг.
                 </p>
                 <p>
                   Наша миссия — обеспечение полной безопасности бизнеса и частных объектов через профессиональный подход, современные технологии и круглосуточный мониторинг.
@@ -327,7 +327,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-primary mb-1">Email</h4>
-                    <p className="text-gray-600">info@strazh-security.ru</p>
+                    <p className="text-gray-600">info@kristall-security.ru</p>
                     <p className="text-sm text-gray-500">Ответим в течение часа</p>
                   </div>
                 </CardContent>
@@ -354,10 +354,10 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-white rounded flex items-center justify-center">
-                  <Icon name="Shield" size={24} className="text-primary" />
+                <div className="w-10 h-10 bg-accent rounded flex items-center justify-center">
+                  <Icon name="ShieldCheck" size={24} className="text-white" />
                 </div>
-                <span className="text-xl font-bold">СТРАЖ</span>
+                <span className="text-xl font-bold">КРИСТАЛЛ</span>
               </div>
               <p className="text-sm text-gray-300">
                 Профессиональная охрана вашего бизнеса 24/7
@@ -385,13 +385,13 @@ const Index = () => {
               <h4 className="font-bold mb-4">Контакты</h4>
               <ul className="space-y-2 text-sm text-gray-300">
                 <li>+7 (495) 123-45-67</li>
-                <li>info@strazh-security.ru</li>
+                <li>info@kristall-security.ru</li>
                 <li>г. Москва, ул. Примерная, 123</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-300">
-            <p>© 2024 ЧОП "СТРАЖ". Все права защищены.</p>
+            <p>© 2024 ЧОП "КРИСТАЛЛ". Все права защищены.</p>
             <div className="flex gap-6">
               <button className="hover:text-white transition-colors">Политика конфиденциальности</button>
               <button className="hover:text-white transition-colors">Пользовательское соглашение</button>
