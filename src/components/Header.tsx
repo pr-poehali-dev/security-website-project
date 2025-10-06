@@ -1,10 +1,19 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import Icon from '@/components/ui/icon';
 
 interface HeaderProps {
   onNavigate: (id: string) => void;
 }
 
 const Header = ({ onNavigate }: HeaderProps) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleNavigate = (id: string) => {
+    onNavigate(id);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
       <div className="container mx-auto px-4">
@@ -35,11 +44,51 @@ const Header = ({ onNavigate }: HeaderProps) => {
               Контакты
             </button>
           </div>
-          <Button onClick={() => onNavigate('contact')} className="bg-accent hover:bg-accent/90">
-            Заказать звонок
-          </Button>
+          <div className="hidden md:block">
+            <Button onClick={() => onNavigate('contact')} className="bg-accent hover:bg-accent/90">
+              Заказать звонок
+            </Button>
+          </div>
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2"
+            aria-label="Меню"
+          >
+            <Icon name={isMobileMenuOpen ? 'X' : 'Menu'} size={24} className="text-gray-700" />
+          </button>
         </div>
       </div>
+      
+      {isMobileMenuOpen && (
+        <div className="md:hidden border-t border-gray-200 bg-white">
+          <div className="container mx-auto px-4 py-4 space-y-3">
+            <button onClick={() => handleNavigate('services')} className="block w-full text-left py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              Услуги
+            </button>
+            <button onClick={() => handleNavigate('about')} className="block w-full text-left py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              О компании
+            </button>
+            <button onClick={() => handleNavigate('advantages')} className="block w-full text-left py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              Преимущества
+            </button>
+            <button onClick={() => handleNavigate('clients')} className="block w-full text-left py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              Клиенты
+            </button>
+            <button onClick={() => handleNavigate('projects')} className="block w-full text-left py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              Проекты
+            </button>
+            <button onClick={() => handleNavigate('faq')} className="block w-full text-left py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              Вопросы
+            </button>
+            <button onClick={() => handleNavigate('contact')} className="block w-full text-left py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              Контакты
+            </button>
+            <Button onClick={() => handleNavigate('contact')} className="w-full bg-accent hover:bg-accent/90 mt-4">
+              Заказать звонок
+            </Button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
