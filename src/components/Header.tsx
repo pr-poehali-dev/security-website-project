@@ -22,6 +22,15 @@ const Header = ({ onNavigate }: HeaderProps) => {
             <button onClick={() => onNavigate('advantages')} className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
               Преимущества
             </button>
+            <button onClick={() => onNavigate('clients')} className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              Клиенты
+            </button>
+            <button onClick={() => onNavigate('projects')} className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              Проекты
+            </button>
+            <button onClick={() => onNavigate('faq')} className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+              Вопросы
+            </button>
             <button onClick={() => onNavigate('contact')} className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
               Контакты
             </button>
