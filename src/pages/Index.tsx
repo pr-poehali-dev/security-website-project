@@ -5,6 +5,12 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 const Index = () => {
   const { toast } = useToast();
@@ -330,6 +336,134 @@ const Index = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-primary mb-4">Успешные проекты</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Примеры нашей работы
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: 'Охрана торгового центра',
+                client: 'ТЦ Метрополис',
+                description: 'Комплексная система безопасности для крупного торгового центра площадью 50 000 м²',
+                results: ['60 камер видеонаблюдения', '24/7 физическая охрана', 'Система контроля доступа'],
+                icon: 'Building2'
+              },
+              {
+                title: 'Безопасность банковского офиса',
+                client: 'Банк Столица',
+                description: 'Многоуровневая система защиты для головного офиса банка',
+                results: ['Тревожная кнопка', 'Интеграция с полицией', 'Инкассация'],
+                icon: 'Landmark'
+              },
+              {
+                title: 'Охрана производства',
+                client: 'Завод Техмаш',
+                description: 'Защита промышленного объекта с контролем пропускного режима',
+                results: ['Периметральная охрана', 'Контроль въезда транспорта', 'Патрулирование'],
+                icon: 'Factory'
+              },
+              {
+                title: 'Безопасность мероприятия',
+                client: 'Форум Digital 2024',
+                description: 'Обеспечение безопасности бизнес-форума с 5000+ участников',
+                results: ['Досмотр участников', 'Контроль входа', 'Оперативная группа'],
+                icon: 'Users'
+              }
+            ].map((project, index) => (
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon name={project.icon} size={28} className="text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-primary mb-1">{project.title}</h3>
+                      <p className="text-sm text-accent font-semibold">{project.client}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="space-y-2">
+                    <p className="text-sm font-semibold text-primary">Результаты:</p>
+                    {project.results.map((result, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <Icon name="CheckCircle2" size={16} className="text-accent flex-shrink-0" />
+                        <p className="text-sm text-gray-600">{result}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-3xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-primary mb-4">Частые вопросы</h2>
+            <p className="text-lg text-gray-600">
+              Ответы на популярные вопросы о наших услугах
+            </p>
+          </div>
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="border rounded-lg px-6 shadow-sm">
+              <AccordionTrigger className="text-left font-semibold text-primary hover:no-underline">
+                Какие документы нужны для заключения договора?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600">
+                Для заключения договора потребуются: копия паспорта руководителя, свидетельство о регистрации юридического лица (или ИП), ИНН организации. Мы подготовим все необходимые документы и согласуем условия в течение 1 рабочего дня.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2" className="border rounded-lg px-6 shadow-sm">
+              <AccordionTrigger className="text-left font-semibold text-primary hover:no-underline">
+                Как быстро вы можете начать охрану объекта?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600">
+                После подписания договора мы можем начать охрану объекта в течение 24 часов. В экстренных случаях возможен выезд группы реагирования в течение 2-3 часов для оценки объекта и начала работы.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3" className="border rounded-lg px-6 shadow-sm">
+              <AccordionTrigger className="text-left font-semibold text-primary hover:no-underline">
+                Какое оборудование вы используете?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600">
+                Мы используем современное оборудование ведущих производителей: IP-камеры высокого разрешения, системы контроля доступа (СКУД), охранно-пожарную сигнализацию, тревожные кнопки. Все оборудование интегрировано с нашей диспетчерской службой для круглосуточного мониторинга.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4" className="border rounded-lg px-6 shadow-sm">
+              <AccordionTrigger className="text-left font-semibold text-primary hover:no-underline">
+                Как осуществляется контроль работы охранников?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600">
+                Контроль осуществляется через: систему электронных обходов (QR-метки на объекте), видеонаблюдение, регулярную связь с диспетчерской службой, выездные проверки старшего смены. Вы получаете ежемесячные отчеты о работе охраны с детализацией всех событий.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-5" className="border rounded-lg px-6 shadow-sm">
+              <AccordionTrigger className="text-left font-semibold text-primary hover:no-underline">
+                Есть ли у вас лицензия на охранную деятельность?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600">
+                Да, наша компания имеет все необходимые лицензии Росгвардии на осуществление охранной деятельности. Все сотрудники прошли специальную подготовку и имеют действующие удостоверения частного охранника. Копии лицензий и сертификатов предоставляются при заключении договора.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-6" className="border rounded-lg px-6 shadow-sm">
+              <AccordionTrigger className="text-left font-semibold text-primary hover:no-underline">
+                Какова стоимость ваших услуг?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600">
+                Стоимость зависит от типа объекта, площади, режима охраны и дополнительных услуг. Базовая стоимость физической охраны начинается от 150 руб/час. Техническая охрана с мониторингом — от 3000 руб/месяц. Для расчета точной стоимости оставьте заявку, и наш специалист проведет бесплатный выезд на объект.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
