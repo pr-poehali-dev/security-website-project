@@ -539,7 +539,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-primary mb-1">Email</h4>
-                    <p className="text-gray-600">info@kristall-security.ru</p>
+                    <p className="text-gray-600"></p>
                     <p className="text-sm text-gray-500">Ответим в течение часа</p>
                   </div>
                 </CardContent>
